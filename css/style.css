@@ -1,0 +1,109 @@
+/* Importing fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Adding CSS Variables for Colours and Applying Transition */
+*{
+    --black: #111;
+    --white: #eee;
+    font-family: 'Poppins', sans-serif;
+    transition: all ease 400ms;
+}body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles For Header Section */
+.container{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background-color: var(--black);
+    color: var(--white);
+}.inner-container{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}.ul-container{
+    width: 80%;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}.ul-container > ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}.ul-container > ul > li > a{
+    text-decoration: none;
+    color: var(--white);
+    padding: 20px;
+}.fa-bars{
+    font-size: 28px;
+    display: none;
+}.fa-xmark{
+    font-size: 32px;
+    display: none;
+}
+@media screen and (max-width:768px){
+    .inner-container{
+        width: 100%;
+        justify-content: space-between;
+    }.ul-container{
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        color: var(--white);
+        background-color: var(--black);
+        justify-content: center;
+        top: -100%;
+    }.inner-container > h1{
+        margin-left: 30px;
+        font-weight: 500;
+    }
+    .fa-bars{
+        display: block;
+        margin-right: 30px;
+    }.fa-xmark{
+        display: block;
+        position: absolute;
+        right: 30px;
+        top: 30px;
+    }.ul-container > ul{
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        height: 100%;
+    }.ul-container > ul > li > a{
+        padding: 0;
+    }
+}
+/* Competed Styles for Header Section */
+
+/**************************************/
+
+/* Starting Styles for Hero Section */
+.herosection{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}.hero-content{
+    width: 50%;
+    height: 100%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+.hero-img{
+    width: 50%;
+    height: 100%;
+    background-color: antiquewhite;
+}
