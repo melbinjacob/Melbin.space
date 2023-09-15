@@ -1,46 +1,8 @@
-let hambruger = document.getElementById("bars")
-let closeIcon = document.getElementById("xIcon")
-let navLinks = document.getElementById("ulContainer")
-function navShow(){
-    navLinks.style.top = "0"
+
+const MAIN_IMG = document.getElementById("img");
+const IMG_ARRAY = ["img/01.jpg", "img/02.jpg", "img/03.jpg", "img/04.jpg","img/05.jpg","img/06.jpg","img/07.jpg","img/08.jpg","img/09.jpg","img/10.jpg","img/11.jpg","img/12.jpg","img/13.jpg","img/14.jpg","img/15.jpg","img/16.jpg","img/17.jpg","img/18.jpg","img/19.jpg"];
+var currentIndex = 0;
+function changeImg() {
+    MAIN_IMG.src = IMG_ARRAY[currentIndex];
+    currentIndex = (currentIndex + 1) % IMG_ARRAY.length;
 }
-function navHide(){
-    navLinks.style.top = "-110vh"
-}
-const maxWidthQuery = window.matchMedia('(max-width: 768px)');
-  function handleMaxWidthChange(mediaQuery) {
-    if (mediaQuery.matches) {
-        navHide()
-        console.log("Nav Hide")
-
-    }
-}
-handleMaxWidthChange(maxWidthQuery);
-maxWidthQuery.addListener(handleMaxWidthChange);
-
-
-const imgLink = document.getElementById("sectioncimg")
-const imgLinks = [
-    "https://images.pexels.com/photos/16877815/pexels-photo-16877815/free-photo-of-an-antique-vintage-window.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/15923681/pexels-photo-15923681/free-photo-of-coffee-tasters-flavour-wheel.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/15923678/pexels-photo-15923678/free-photo-of-vintage-light-hanging.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/15923677/pexels-photo-15923677/free-photo-of-coffee-brew.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521180/pexels-photo-14521180.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521175/pexels-photo-14521175.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521170/pexels-photo-14521170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521172/pexels-photo-14521172.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521177/pexels-photo-14521177.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521156/pexels-photo-14521156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521155/pexels-photo-14521155.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521152/pexels-photo-14521152.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521148/pexels-photo-14521148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521149/pexels-photo-14521149.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/14521143/pexels-photo-14521143.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load",
-    "https://images.pexels.com/photos/14521137/pexels-photo-14521137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-];
-function changeImgLink(link, links){
-    var randomIndex = Math.floor(Math.random() * links.length);
-    link.src = links[randomIndex];
-};
-
-setInterval( function(){changeImgLink(imgLink, imgLinks)}, 800);
